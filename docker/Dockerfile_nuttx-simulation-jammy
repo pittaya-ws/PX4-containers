@@ -8,6 +8,8 @@ LABEL maintainer="Pittaya <pittaya.ws@gmail.com>"
 
 ##### PX4 NuttX Part
 
+RUN python3 -m pip install pyserial
+
 RUN apt-get update \
 	&& DEBIAN_FRONTEND=noninteractive apt-get -y --quiet --no-install-recommends install \
 		autoconf \
@@ -26,6 +28,8 @@ RUN apt-get update \
 		pkg-config \
 		uncrustify \
 		vim-common \
+		bash-completion \
+		python3-tk \
 	&& apt-get -y autoremove \
 	&& apt-get clean autoclean \
 	&& rm -rf /var/lib/apt/lists/{apt,dpkg,cache,log} /tmp/* /var/tmp/*
