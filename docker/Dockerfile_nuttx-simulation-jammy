@@ -30,6 +30,7 @@ RUN apt-get update \
 		vim-common \
 		bash-completion \
 		python3-tk \
+		python-is-python3 \
 	&& apt-get -y autoremove \
 	&& apt-get clean autoclean \
 	&& rm -rf /var/lib/apt/lists/{apt,dpkg,cache,log} /tmp/* /var/tmp/*
